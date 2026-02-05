@@ -1,0 +1,31 @@
+body, html {
+  height: 100%; 
+  margin: 0; 
+  padding: 0;
+}
+body {
+    background-image: url("../images/download.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    height: 100vh;
+    width: 100vw;
+}
+#nav {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.navlink {
+    color:black;
+    margin-right: 40px;
+    font-size: 25px;
+    font-weight:500;
+    text-decoration: none;
+}
+.homepage-intro {
+    margin-left: 100px;
+    margin-top: 100px;
+}
