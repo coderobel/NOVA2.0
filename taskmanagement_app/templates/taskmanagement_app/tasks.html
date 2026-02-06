@@ -1,0 +1,13 @@
+{% extends 'taskmanagement_app/base.html' %}
+{% block content %}
+  <div class="card">
+    <h1>Your Tasks</h1>
+    {% for task in tasks %}
+        <ol>
+            <a href="{% url 'taskmanagement_app:task' task.id%}"><li>{{task}}</li></a>
+        </ol>
+    {% empty %}
+        <p>No tasks have been added to your account yet.</p>
+    {% endfor %}
+  </div>
+{% endblock content %}
