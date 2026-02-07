@@ -10,17 +10,20 @@
   </head>
 
   <body>
-    <header>
-        <nav class="container">
-            <ul id="nav">
+    <header class="card" id="nav">
+        <nav>
+            <ul> 
                 <li>
-                    <a href="{% url 'taskmanagement_app:home' %}" class="navlink">Home</a>
+                    <a href="{% url 'taskmanagement_app:home' %}" id="Nova-h1">Nova</a>
                 </li>
                 <li>
-                    <a href="{% url 'taskmanagement_app:tasks' %}" class="navlink">Manage Tasks</a>
+                    <a href="{% url 'taskmanagement_app:tasks' %}">Manage Tasks</a>
                 </li>
                 <li>
-                    <a href="#" class="navlink">Track Goals</a>
+                    <a href="#">Track Goals</a>
+                </li>
+                <li>
+                    <a href="#">SignUp</a>
                 </li>
             </ul>
         </nav>

@@ -9,24 +9,52 @@ body {
     background-attachment: fixed;
     background-position: center center;
 }
-#nav {
+header {
+    display: flex;
+    flex-direction: row;
+}
+h1 {
+    display: inline;
+}
+
+nav ul {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
     list-style: none;
 }
-.navlink {
-    color:black;
-    margin-right: 40px;
-    font-size: 25px;
+nav li {
+    float: left;
+}
+nav li a{
+    color:white;
+    margin-right: 90px;
+    font-size: 21px;
     font-weight:500;
     text-decoration: none;
 }
 
-.card {
+nav li a:hover {
+    color: #9292ef;
+    font-size: 23px;
+    transition-duration: 0.5s;
+}
+#card {
+    background-color: rgb(168, 165, 165);
     padding: 40px;
     width: 350px;
     border-radius: 20px;
-    margin-top: 200px;
-    margin-left: 500px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+#Nova-h1 {
+    margin-left: 140px;
+}
+#nav {
+    margin-top: 13px;
+    margin-left: 120px;
+    background-color:rgb(107, 105, 105);
+    height: 65px;
+    width: 1000px;
+    border-radius: 50px;
 }
