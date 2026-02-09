@@ -1,7 +1,21 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
-    <div class="card" id="card">
+    <div class="card" id="card1">
         <h1>Welcome to NOVA</h1>
         <p>NOVA is a task management application you can use to manage your daily,weekly and monthly tasks to increase your productivity and make your life easier.</p>
     </div>
+    
+    <div class="first-row">
+        <div class="card" id="card">
+            <h1>Manage Tasks</h1>
+            <p>NOVA is a task management application you can use to manage your daily,weekly and monthly tasks to increase your productivity and make your life easier.</p>
+            <a href="{% url 'taskmanagement_app:tasks' %}" class="btn-secondary">Manage Tasks</a>
+        </div>
+        <div class="card" id="card">
+            <h1>Work towards your goals</h1>
+            <p>NOVA is a task management application you can use to manage your daily,weekly and monthly tasks to increase your productivity and make your life easier.</p>
+            <a href="#" class="btn-secondary">Track Goals</a>
+        </div>
+    </div>
+    
 {% endblock content %}

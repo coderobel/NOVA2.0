@@ -5,6 +5,7 @@
     <h4>Description : {{task.description}}</h4>
     <h4>Date of Assignment : {{task.date_assigned}}</h4>
     <h4>Task Completion Date : {{task.deadline}}</h4> 
-    <button class="btn-primary">Delete</button>
+    <a href="{% url 'taskmanagement_app:deletetask' task.id%}">Delete</a>
+    <a href="{% url 'taskmanagement_app:updatetask' task.id%}">Edit</a>
 </div>
 {% endblock content %}
