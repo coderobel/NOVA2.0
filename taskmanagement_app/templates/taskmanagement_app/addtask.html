@@ -3,18 +3,21 @@
 <form action="{% url 'taskmanagement_app:addtask' %}" method="post" class="card" id="card1">
     
     {% csrf_token %}
-    <label for="task"></label>
+    <label for="task">Task:</label>
     <input type="text" id="task" name="task" placeholder="enter task">
     
-    <label for="due-date"></label>
+    <label for="due-date">Deadline:</label>
     <input type="date" id="due-date" name="due-date" placeholder="enter deadline for task here">
-    <label for="description"></label>
+
+    <label for="description">Decription:</label>
     <input type="text" id="description" name="description" placeholder="enter description for task here">
-    <button type="submit">Submit</button>
+
     {% if  error %}
         <div class="alert alert-info">
             <p>Task field and deadline should not be empty</p>
         </div>
     {% endif %}
+    <button type="submit" class="button" id="submit">Submit</button>
+    
 </form>
 {% endblock content %}

@@ -39,6 +39,26 @@ nav li a:hover {
     font-size: 23px;
     transition-duration: 0.5s;
 }
+.button {
+    background-color: black;
+    margin-top: 10px;
+    color: white;
+    border-radius: 20px;
+    height: 40px;
+    width: 200px;
+}
+
+button a{
+    color: white;
+}
+.button {
+    margin-top: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    height: 40px;
+    width: 200px;
+}
 #card1 {
     background-color: rgb(168, 165, 165);
     padding: 40px;
@@ -57,21 +77,30 @@ nav li a:hover {
 }
 #Nova-h1 {
     margin-left: 0px;
-    margin-right: 450px;
+    margin-right: 700px;
     font-size: 25px;
     font-weight: 1000;
 }
 #nav {
-    margin-top: 13px;
-    margin-left: 120px;
     background-color:rgb(107, 105, 105);
     height: 65px;
-    width: 1000px;
-    border-radius: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;      /* Fixed elements collapse unless given a width */
+    z-index: 1000;
 }
 .first-row {
     display: flex;
     flex-direction: row;
     margin-top: 30px;
     margin-left: 110px;
+}
+
+#add-task-button {
+    margin-top: 30px;
+    margin-left: 300px;
+}
+#submit {
+    margin-left: 300px;
 }

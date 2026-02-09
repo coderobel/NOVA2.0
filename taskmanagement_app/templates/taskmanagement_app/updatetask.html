@@ -12,11 +12,11 @@
     <label for="description">Description: </label>
     <textarea name="description">{{task.description}}</textarea>
 
-    <button type="submit">Submit</button>
-    {% if  error %}
+   {% if  error %}
         <div class="alert alert-info">
             <p>Task field and deadline should not be empty</p>
         </div>
     {% endif %}
+    <button type="submit" class="button" id="submit">Submit</button>
 </form>
 {% endblock content %}

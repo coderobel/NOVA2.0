@@ -1,14 +1,19 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
-  <div class="card" id="card">
-    <h1>Your Tasks</h1>
-    {% for task in tasks %}
+  
+    <div class="card" id="card1">
+      <h1>Your Tasks</h1>
+      {% for task in tasks %}
         <ul>
             <li><a href="{% url 'taskmanagement_app:task' task.id%}">{{task}}</a></li>
         </ul>
-    {% empty %}
+      {% empty %}
         <p>No tasks have been added to your account yet.</p>
-    {% endfor %}
-    <a href="{% url 'taskmanagement_app:addtask' %}">Add task</a>
-  </div>
+      {% endfor %}
+        <button class="button" id="add-task-button"><a href="{% url 'taskmanagement_app:addtask' %}">Add task</a></button>
+    </div>
+    
+      
+   
+  
 {% endblock content %}
