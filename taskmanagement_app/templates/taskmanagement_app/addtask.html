@@ -2,16 +2,17 @@
 {% block content %}
 <form action="{% url 'taskmanagement_app:addtask' %}" method="post" class="card" id="card1">
     
+    <h3 class="card-headers">Add Task</h3>
     {% csrf_token %}
-    <label for="task">Task:</label>
-    <input type="text" id="task" name="task" placeholder="enter task">
+    <label for="task" class="label">Task:</label>
+    <input type="text" id="task" name="task" placeholder="enter task" class="input">
     
-    <label for="due-date">Deadline:</label>
-    <input type="date" id="due-date" name="due-date" placeholder="enter deadline for task here">
+    <label for="due-date" class="label">Deadline:</label>
+    <input type="date" id="due-date" name="due-date" placeholder="enter deadline for task here" class="input">
 
-    <label for="description">Decription:</label>
-    <input type="text" id="description" name="description" placeholder="enter description for task here">
-
+    <label for="description" class="label">Decription:</label>
+    <textarea name="description" class="input" id="description" placeholder="enter description for task here" class="textarea"></textarea>
+    
     {% if  error %}
         <div class="alert alert-info">
             <p>Task field and deadline should not be empty</p>

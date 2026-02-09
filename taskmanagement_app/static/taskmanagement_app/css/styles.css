@@ -104,3 +104,25 @@ button a{
 #submit {
     margin-left: 300px;
 }
+.input {
+    margin-left: 200px;
+    margin-bottom: 20px;
+    width: 400px;
+}
+.label {
+    margin-left: 200px;
+}
+.text-area {
+    margin-left: 200px;
+    height: 200px;
+    width: 400px;
+}
+.card-headers {
+    margin-left: 350px;
+}
+.edit-delete-button {
+    display: flex;
+    flex-direction: row;
+    margin-left: 200px;
+    gap: 20px;
+}

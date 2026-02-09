@@ -3,14 +3,16 @@
 <form action="{% url 'taskmanagement_app:updatetask' task.id%}" method="post" class="card" id="card1">
     
     {% csrf_token %}
-    <label for="task">Task Name:</label>
-    <input type="text" id="task" name="task" value="{{task.title}}">
-    
-    <label for="due-date">Deadline:</label>
-    <input type="date" id="due-date" name="due-date" value="{{task.deadline}}">
+    <h3 class="card-headers">Edit Tasks</h3>
 
-    <label for="description">Description: </label>
-    <textarea name="description">{{task.description}}</textarea>
+    <label for="task" class="label">Task Name:</label>
+    <input type="text" id="task" name="task" value="{{task.title}}" class="input">
+    
+    <label for="due-date" class="label">Deadline:</label>
+    <input type="date" id="due-date" name="due-date" value="{{task.deadline}}" class="input">
+
+    <label for="description" class="label">Description: </label>
+    <textarea name="description" class="input">{{task.description}}</textarea>
 
    {% if  error %}
         <div class="alert alert-info">

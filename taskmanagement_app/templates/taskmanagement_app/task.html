@@ -1,11 +1,13 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
-<div class="card" id="card">
-    <h1>Task - {{task.title}}</h1>
+<div class="card" id="card1">
+    <h1 class="card-headers">Task - {{task.title}}</h1>
     <h4>Description : {{task.description}}</h4>
     <h4>Date of Assignment : {{task.date_assigned}}</h4>
-    <h4>Task Completion Date : {{task.deadline}}</h4> 
-    <button class="button"><a href="{% url 'taskmanagement_app:deletetask' task.id%}">Delete</a></button>
-    <button class="button"><a href="{% url 'taskmanagement_app:updatetask' task.id%}">Edit</a></button>
-</div>
+    <h4>Task Completion Date : {{task.deadline}}</h4>
+    <div class="edit-delete-button">
+        <button class="button"><a href="{% url 'taskmanagement_app:deletetask' task.id%}">Delete</a></button>
+        <button class="button"><a href="{% url 'taskmanagement_app:updatetask' task.id%}">Edit</a></button>
+    </div>
+</div> 
 {% endblock content %}

@@ -2,7 +2,7 @@
 {% block content %}
   
     <div class="card" id="card1">
-      <h1>Your Tasks</h1>
+      <h1 class="card-headers">Your Tasks</h1>
       {% for task in tasks %}
         <ul>
             <li><a href="{% url 'taskmanagement_app:task' task.id%}">{{task}}</a></li>
