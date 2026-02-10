@@ -9,4 +9,6 @@ urlpatterns = [
     path('addtask/', views.addtask, name='addtask'),
     path('updatetask/<int:task_id>', views.updatetask, name= 'updatetask'),
     path('deletetask/<int:task_id>', views.deletetask, name='deletetask'),
+    path('tasks/tasks_events_json/', views.tasks_events_json, name='tasks_events_json'),
+    path('tasks/calendarview', views.calendar_view, name='calendarview'),
 ]

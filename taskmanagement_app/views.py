@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Tasks 
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 # Create your views here.
 def home(request):
@@ -53,3 +53,20 @@ def deletetask(request, task_id):
     task = Tasks.objects.get(id=task_id)
     task.delete()
     return HttpResponseRedirect(reverse('taskmanagement_app:tasks'))
+def tasks_events_json(request):
+    tasks = Tasks.objects.all()
+
+    events = []
+    for task in tasks:
+        events.append({
+            'id': task.id,
+            'title': task.title,
+            'deadline': task.deadline.isoformat() if task.deadline else None,
+            'url' : reverse('taskmanagement_app:updatetask', args=[task.id]),
+            'extendedProps' : {
+                'description': task.description
+            } 
+        })
+    return JsonResponse(events, safe=False)
+def calendar_view(request):
+    return render(request, 'taskmanagement_app/calendar.html')
