@@ -1,0 +1,13 @@
+{% extends "taskmanagement_app/base.html" %}
+{% block content %}
+  
+  <div class="card" id="card1"">
+    <h3>Signup</h3>
+    <form method="post" action="{% url 'users:register' %}" >
+        {% csrf_token %}
+        {{ form.as_p }}      
+        <button name="submit" class="button">Signup</button>
+        <input type="hidden" name="next" value="{% url 'taskmanagement_app:home' %}" />
+    </form>
+  </div>
+{% endblock content %}
