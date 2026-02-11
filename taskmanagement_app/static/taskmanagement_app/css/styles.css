@@ -2,7 +2,7 @@ body, html {
   margin: 0; 
   padding: 0;
 }
-body {
+.body1 {
     background-image: url("../images/download.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -75,6 +75,22 @@ button a{
     margin-top: 100px;
     margin-left: 100px;
 }
+#calendar-view {
+    background-color: rgb(168, 165, 165);
+    padding: 40px;
+    width: 350px;
+    border-radius: 20px;
+    margin-top: 100px;
+    margin-left: 450px;
+}
+#your-tasks{
+    background-color: rgb(168, 165, 165);
+    padding: 40px;
+    width: 350px;
+    border-radius: 20px;
+    margin-top: 100px;
+    margin-left: 450px;
+}
 #Nova-h1 {
     margin-left: 0px;
     margin-right: 700px;
@@ -99,7 +115,6 @@ button a{
 
 #add-task-button {
     margin-top: 30px;
-    margin-left: 300px;
 }
 #submit {
     margin-left: 300px;

@@ -61,8 +61,8 @@ def tasks_events_json(request):
         events.append({
             'id': task.id,
             'title': task.title,
-            'deadline': task.deadline.isoformat() if task.deadline else None,
-            'url' : reverse('taskmanagement_app:updatetask', args=[task.id]),
+            'start': task.deadline.isoformat() if task.deadline else None,
+            'url' : reverse('taskmanagement_app:task', args=[task.id]),
             'extendedProps' : {
                 'description': task.description
             } 

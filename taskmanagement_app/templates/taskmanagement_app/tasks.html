@@ -1,8 +1,8 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
   
-    <div class="card" id="card1">
-      <h1 class="card-headers">Your Tasks</h1>
+    <div class="card" id="your-tasks">
+      <h1>Your Tasks</h1>
       {% for task in tasks %}
         <ul>
             <li><a href="{% url 'taskmanagement_app:task' task.id%}">{{task}}</a></li>
@@ -12,9 +12,10 @@
       {% endfor %}
         <button class="button" id="add-task-button"><a href="{% url 'taskmanagement_app:addtask' %}">Add task</a></button>
     </div>
-    <div class="card" id="card1">
-        <h3>Calendar View</h3>
-        <button class="button" ><a href="{% url 'taskmanagement_app:calendarview' %}">View Calendar</a></button>
+    <div class="card" id="calendar-view">
+        <h3>Monthly View</h3>
+        <p>Have a look at what this month has for you</p>
+        <button class="button" id="view-calendar"><a href="{% url 'taskmanagement_app:calendarview' %}">View Calendar</a></button>
     </div>
     
       

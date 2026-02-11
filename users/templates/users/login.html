@@ -1,0 +1,15 @@
+{% extends "taskmanagement_app/base.html" %}
+{% block content %}
+  {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
+  <div class="card" id="card" style="margin-top: 250px; margin-left: 500px;">
+    <h3>Login</h3>
+    <form method="post" action="{% url 'users:login' %}" >
+        {% csrf_token %}
+        {{ form.as_p }}      
+        <button name="submit" class="button">Login</button>
+        <input type="hidden" name="next" value="{% url 'taskmanagement_app:home' %}" />
+    </form>
+  </div>
+{% endblock content %}
