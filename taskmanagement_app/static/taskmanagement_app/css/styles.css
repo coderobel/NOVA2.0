@@ -1,13 +1,24 @@
-body, html { 
-  margin: 0; 
-  padding: 0;
+
+@font-face {
+    font-family: 'IBM Plex Sans-Bold';
+    src: url('../fonts/IBMPlexSans-Bold.ttf') format('truetype');
+    font-weight: 400; /* Regular weight */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'IBM Plex Sans';
+    src: url('../fonts/IBMPlexSans-Regular.ttf') format('truetype');
+    font-weight: 400; /* Regular weight */
+    font-style: normal;
+}
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+p {
+    font-family:  'IBM Plex Sans', sans-serif;;
 }
 .body1 {
-    background-image: url("../images/download.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
+    background-color: rgb(255, 252, 248);
 }
 header {
     display: flex;
@@ -16,18 +27,31 @@ header {
 h1 {
     display: inline;
 }
-
+nav {
+    background-color:  white;
+}
+#Nova-h1 {
+    margin-left: 0px;
+    margin-right: 700px;
+    font-size: 25px;
+    font-weight: 1000;
+    color: rgb(20, 32, 62, 24%)
+}
+#Nova-h1:hover {
+    color: rgb(20, 32, 62, 100%);
+    transition: 0.5s;
+    font-size: 27px;
+    cursor: pointer;
+}
 nav ul {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
     list-style: none;
 }
-nav li {
-    float: left;
-}
+
 nav li a{
-    color:white;
+    color: rgb(20, 32, 62, 50%);
     margin-right: 90px;
     font-size: 21px;
     font-weight:400;
@@ -35,9 +59,26 @@ nav li a{
 }
 
 nav li a:hover {
-    color: #9292ef;
+    color: rgb(20, 32, 62);
     font-size: 23px;
     transition-duration: 0.5s;
+}
+#welcome-to-nova {
+    margin-top: 200px;
+    margin-left: 50px; 
+    font-size: 30px;
+    font-weight:1000;
+    font-family: 'IBM Plex Sans-Bold';
+}
+#welcome-to-nova-h1 {
+    margin-left: 380px;
+}
+#welcome-to-nova-p1 {
+    margin-top: 40px;
+    margin-left: 18px;
+}
+#welcome-to-nova-p2 {
+    margin-left: 50px;
 }
 .button {
     background-color: black;
@@ -105,14 +146,9 @@ button a{
     margin-top: 100px;
     margin-left: 450px;
 }
-#Nova-h1 {
-    margin-left: 0px;
-    margin-right: 700px;
-    font-size: 25px;
-    font-weight: 1000;
-}
+
 #nav {
-    background-color:rgb(107, 105, 105);
+  
     height: 65px;
     position: fixed;
     top: 0;
