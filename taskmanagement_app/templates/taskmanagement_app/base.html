@@ -18,9 +18,17 @@
                 <li id="Nova-h1">
                     NOVA
                 </li>
-                <li>
-                    <a href="{% url 'taskmanagement_app:home' %}">Home</a>
-                </li>
+                <div class="nav-menu">
+                    <li>
+                        <a href="{% url 'taskmanagement_app:home' %}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'taskmanagement_app:tasks' %}">Tasks</a>
+                    </li>
+                    <li>
+                        <a href="#">Goals</a>
+                    </li>
+                </div>
                 <li>
                     <a href="{% url 'users:login' %}">Login</a>
                 </li>
