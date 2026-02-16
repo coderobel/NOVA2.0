@@ -1,6 +1,6 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
-<form action="{% url 'taskmanagement_app:addtask' %}" method="post" class="card" id="card1">
+<form action="{% url 'taskmanagement_app:addtask' %}" method="post" class="addtask-card">
     
     <h3 class="card-headers">Add Task</h3>
     {% csrf_token %}

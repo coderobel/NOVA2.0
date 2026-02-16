@@ -2,19 +2,32 @@
 {% block content %}
     <div id="welcome-to-nova">
         <h1 id="welcome-to-nova-h1">Welcome to NOVA</h1>
-        <p id="welcome-to-nova-p1">NOVA is your productivity assistant which assists you to manage your daily,weekly</p><p id="welcome-to-nova-p2"> and monthly tasks to increase your productivity and make your life easier.</p>
+        <p id="welcome-to-nova-p1">NOVA is your productivity assistant which assists you<br>manage your daily,weekly and monthly tasks to increase your<br>productivity and make your life easier.</p>
     </div>
-    
+   <section id="section1">
+        <article><h3>Having trouble organizing your tasks?</h3><br>No worries NOVA is here to the rescue, whether it is organizing your daily,weekly<br> or yearly deadlines and notifying you for your upcoming deadlines.</article>
+        <div class="img1"></div>
+   </section> 
+   <section id="section2">
+        <div class="img2"></div>
+        <article><h3>Working towards your goals?</h3><br>Use NOVA to help you set and achieve your goals and to strive towards a better life.</article>
+   </section> 
     <div class="first-row">
-        <div class="card" id="card1">
-            <h1>Manage Tasks</h1>
+        <div class="card" id="manage-tasks-card">
+            <div class="card-header">
+                <h1>Manage Tasks</h1>
+            </div>
             <p>Manage your daily,weekly and monthly tasks to increase your productivity.</p>
-            <button class="button"><a href="{% url 'taskmanagement_app:tasks' %}">Manage Tasks</a></button>
+            <p>Click below to go to the goal management dashboard.</p>
+            <h4><a href="{% url 'taskmanagement_app:tasks' %}">Manage Tasks</a></h4>
         </div>
-        <div class="card" id="card1">
-            <h1>Work towards your goals</h1>
+        <div class="card" id="work-towards-goal">
+            <div class="card-header">
+                <h1>Work towards your goals</h1>
+            </div>
             <p>Set your goals and track your progress.</p>
-            <button class="button"><a href="#">Track Goals</a></button>
+            <p>Click below to go to the goal management dashboard.</p>
+           <h4><a href="{% url 'taskmanagement_app:tasks' %}">Track Goals</a></h4>
         </div>
     </div>
     

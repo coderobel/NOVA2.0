@@ -18,7 +18,7 @@ p {
     font-family:  'IBM Plex Sans', sans-serif;;
 }
 .body1 {
-     background-color: rgb(255, 252, 248);;
+     background-color: rgb(255, 252, 248);
 }
 header {
     display: flex;
@@ -35,12 +35,12 @@ nav {
     margin-right: 400px;
     font-size: 25px;
     font-weight: 1000;
-    color: rgb(20, 32, 62, 24%)
+    font-family: 'IBM Plex Sans-Bold';
+    color: rgb(20, 32, 62, 50%)
 }
 #Nova-h1:hover {
     color: rgb(20, 32, 62, 100%);
     transition: 0.5s;
-    font-size: 27px;
     cursor: pointer;
 }
 .nav-menu {
@@ -69,14 +69,18 @@ nav li a:hover {
     transition-duration: 0.5s;
 }
 #welcome-to-nova {
-    margin-top: 200px;
-    margin-left: 50px; 
+    padding-top: 200px;
+    padding-bottom: 300px;
     font-size: 30px;
     font-weight:1000;
-    font-family: 'IBM Plex Sans-Bold';
+    font-family: 'IBM Plex Sans-Bold', sans-serif;
+    background-image: url('../images/download.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 #welcome-to-nova-h1 {
-    margin-left: 380px;
+    margin-left: 250px;
 }
 #welcome-to-nova-p1 {
     margin-top: 40px;
@@ -85,25 +89,130 @@ nav li a:hover {
 #welcome-to-nova-p2 {
     margin-left: 50px;
 }
-.button {
-    background-color: black;
-    margin-top: 10px;
-    color: white;
+#section1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    background-color: rgb(249, 244, 244);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+article {
+    display: inline;
+    margin-left: 30px; 
+    margin-top: 20px;
+}
+.img1 {
+    background-image: url('../images/tasks_img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 500px;
     border-radius: 20px;
-    height: 40px;
-    width: 200px;
+}
+.img1:hover {
+    background-image: url('../images/tasks_img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 520px;
+    width: 510px;
+    border-radius: 20px;
+    transition: 1s;
+    cursor: pointer;
+}
+#section2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    background-color: rgb(249, 244, 244);
+    padding-bottom: 40px;
+}
+.img2 {
+    background-image: url('../images/goals.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 500px;
+    border-radius: 20px;
+}
+.img2:hover {
+    background-image: url('../images/goals.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 520px;
+    width: 510px;
+    border-radius: 20px;
+    transition: 1s;
+    cursor: pointer;
+}
+.first-row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    gap: 40px;
+}
+#manage-tasks-card {
+    background-color: rgb(149, 146, 146);
+    padding: 40px;
+    width: 500px;
+    border-radius: 20px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+#manage-tasks-card:hover {
+    background-color: black;
+    width: 530px;
+    transition: 0.5s;
+    cursor: pointer;
+    color: white;
+}
+#work-towards-goal {
+    background-color: rgb(149, 146, 146);
+    padding: 40px;
+    width: 500px;
+    border-radius: 20px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+#work-towards-goal:hover {
+    background-color: black;
+    width: 530px;
+    transition: 0.5s;
+    cursor: pointer;
+    color: white
+}
+.img1 {
+    background-image: url('../images/tasks_img.jpg');
 }
 
+
 button a{
-    color: white;
+    color: black;
+    text-decoration: none;
 }
+
 .button {
     margin-top: 30px;
-    background-color: black;
-    color: white;
-    border-radius: 20px;
-    height: 40px;
-    width: 200px;
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    height: 50px;
+    width: 250px;
+}
+.button:hover {
+    background-color: rgb(109, 104, 104);
 }
 #card1 {
     background-color: rgb(168, 165, 165);
@@ -117,8 +226,21 @@ button a{
     background-color: black;
     color: white;
     width: 930px;
-    transition: 0.5s;
-    height: 280px;
+    transition: 1s;
+}
+.addtask-card {
+    background-color: rgb(168, 165, 165);
+    padding: 40px;
+    width: 900px;
+    border-radius: 20px;
+    margin-top: 140px;
+    margin-left: 160px;
+}
+.addtask-card:hover {
+    padding: 38px;
+    background-color: black;
+    color: white;
+    transition: 1s;
 }
 #card {
     background-color: rgb(168, 165, 165);
@@ -141,7 +263,13 @@ button a{
     width: 350px;
     border-radius: 20px;
     margin-top: 100px;
-    margin-left: 450px;
+    margin-left: 170px;
+}
+#calendar-view:hover {
+    padding: 38px;
+    background-color: black;
+    color: white;
+    transition: 1s;
 }
 #your-tasks{
     background-color: rgb(168, 165, 165);
@@ -160,12 +288,6 @@ button a{
     left: 0;
     width: 100%;      /* Fixed elements collapse unless given a width */
     z-index: 1000;
-}
-.first-row {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    margin-left: 110px;
 }
 
 #add-task-button {
