@@ -70,7 +70,7 @@ nav li a:hover {
 }
 #welcome-to-nova {
     padding-top: 200px;
-    padding-bottom: 300px;
+    padding-bottom: 220px;
     font-size: 30px;
     font-weight:1000;
     font-family: 'IBM Plex Sans-Bold', sans-serif;
@@ -97,6 +97,7 @@ nav li a:hover {
     background-color: rgb(249, 244, 244);
     padding-top: 100px;
     padding-bottom: 100px;
+    padding-left: 50px;
 }
 article {
     display: inline;
@@ -130,6 +131,7 @@ article {
     gap: 30px;
     background-color: rgb(249, 244, 244);
     padding-bottom: 40px;
+    padding-left: 30px;
 }
 .img2 {
     background-image: url('../images/goals.jpg');
@@ -151,14 +153,7 @@ article {
     transition: 1s;
     cursor: pointer;
 }
-.first-row {
-    display: flex;
-    flex-direction: row;
-    margin-top: 30px;
-    margin-left: 100px;
-    margin-bottom: 50px;
-    gap: 40px;
-}
+
 #manage-tasks-card {
     background-color: rgb(149, 146, 146);
     padding: 40px;
@@ -214,13 +209,21 @@ button a{
 .button:hover {
     background-color: rgb(109, 104, 104);
 }
+.tasks {
+    background-image: url('../images/download.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
 #card1 {
     background-color: rgb(168, 165, 165);
     padding: 40px;
     width: 900px;
     border-radius: 20px;
     margin-top: 100px;
-    margin-left: 80px;
+    margin-left: 150px;
 }
 #card1:hover {
     background-color: black;
