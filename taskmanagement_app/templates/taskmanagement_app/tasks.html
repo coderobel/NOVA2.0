@@ -3,28 +3,38 @@
   
     <div class="tasks">
       <div class="card" id="card1">
-        <h1>Your tasks for today:</h1>
+        <h1 style="margin-left: 120px; font-weight: 900;">To Do List-Click a task to view details</h1>
         {% for task in tasks %}
-          <ul>
-              <li><a href="{% url 'taskmanagement_app:task' task.id%}">{{task}}</a></li>
+          <ul style="margin-left: 200px;">
+              <li><a href="{% url 'taskmanagement_app:task' task.id%}"><h4>{{task}}</h4></a></li>
           </ul>
         {% empty %}
-          <p>No tasks have been added to your account yet.</p>
+          <p style="margin-left: 200px;margin-top: 10px; margin-bottom: 20px;">No tasks have been added.Click below to add task.</p>
         {% endfor %}
-          <button class="button" id="add-task-button"><a href="{% url 'taskmanagement_app:addtask' %}">Add task</a></button>
+          <form action="{% url 'taskmanagement_app:addtask' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit"  class="button" style="margin-left: 300px;">
+              Add task
+            </button>
+          </form>
     </div>
 
     <div style="display: flex; flex-direction: row;">
         <div class="card" id="calendar-view">
-          <h3>Weekly View</h3>
+          <h3 style="font-weight: 900;">Weekly View</h3>
           <p>Your tasks for this week</p>
           <button class="button" id="view-calendar"><a href="{% url 'taskmanagement_app:calendarview' %}">View Calendar</a></button>
         </div>
 
         <div class="card" id="calendar-view">
-          <h3>Monthly View</h3>
+          <h3 style="font-weight: 900;">Monthly View</h3>
           <p>Have a look at what this month has for you</p>
-          <button class="button" id="view-calendar"><a href="{% url 'taskmanagement_app:calendarview' %}">View Calendar</a></button>
+          <form action="{% url 'taskmanagement_app:calendarview' %}" method="POST">
+            {% csrf_token %}
+            <button  class="button">
+              View Calendar
+            </button>
+          </form>
         </div>
     </div>
     </div>

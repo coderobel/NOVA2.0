@@ -28,25 +28,30 @@ h1 {
     display: inline;
 }
 nav {
-    background-color:  white;
+    background-color:  rgb(127, 124, 124);
 }
+nav:hover {
+    background-color: rgb(205, 203, 203);
+    transition: 1s;
+}
+
 #Nova-h1 {
     margin-left: 0px;
-    margin-right: 400px;
+    margin-right: 350px;
     font-size: 25px;
     font-weight: 1000;
     font-family: 'IBM Plex Sans-Bold';
     color: rgb(20, 32, 62, 50%)
 }
 #Nova-h1:hover {
-    color: rgb(20, 32, 62, 100%);
+    color: rgb(2, 3, 7);
     transition: 0.5s;
     cursor: pointer;
 }
 .nav-menu {
     display: flex;
     flex-direction: row;
-    margin-right: 350px;
+    margin-right: 200px;
 }
 nav ul {
     margin-top: 20px;
@@ -57,7 +62,7 @@ nav ul {
 
 nav li a{
     color: rgb(20, 32, 62, 50%);
-    margin-right: 20px;
+    margin-right: 28px;
     font-size: 21px;
     font-weight:400;
     text-decoration: none;
@@ -65,7 +70,6 @@ nav li a{
 
 nav li a:hover {
     color: rgb(20, 32, 62);
-    font-size: 23px;
     transition-duration: 0.5s;
 }
 #welcome-to-nova {
@@ -90,6 +94,16 @@ nav li a:hover {
     margin-left: 50px;
 }
 #section1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    background-color: rgb(249, 244, 244);
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 50px;
+}
+#section3 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -153,7 +167,26 @@ article {
     transition: 1s;
     cursor: pointer;
 }
-
+.img3 {
+    background-image: url('../images/studying.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    width: 500px;
+    border-radius: 20px;
+}
+.img3:hover {
+     background-image: url('../images/studying.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 520px;
+    width: 510px;
+    border-radius: 20px;
+    transition: 1s;
+    cursor: pointer;
+}
 #manage-tasks-card {
     background-color: rgb(149, 146, 146);
     padding: 40px;
@@ -215,6 +248,14 @@ button a{
     background-position: center;
     background-size: cover;
     padding-bottom: 30px;
+    padding-top: 30px;
+}
+.task {
+    background-image: url('../images/download.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 200px;
     padding-top: 30px;
 }
 #card1 {

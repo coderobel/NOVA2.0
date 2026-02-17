@@ -1,6 +1,7 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
-<form action="{% url 'taskmanagement_app:addtask' %}" method="post" class="addtask-card">
+<div class="tasks">
+    <form action="{% url 'taskmanagement_app:addtask' %}" method="post" class="addtask-card">
     
     <h3 class="card-headers">Add Task</h3>
     {% csrf_token %}
@@ -21,4 +22,5 @@
     <button type="submit" class="button" id="submit">Submit</button>
     
 </form>
+</div>
 {% endblock content %}

@@ -5,13 +5,14 @@
         <p id="welcome-to-nova-p1">NOVA is your productivity assistant which assists you<br>manage your daily,weekly and monthly tasks to increase your<br>productivity and make your life easier.</p>
     </div>
 
-    
+
    <section id="section1">
         <div>
-            <article><h3>Having trouble organizing your tasks?</h3><br>No worries NOVA is here to the rescue, whether it is organizing your daily,weekly<br> or yearly deadlines and notifying you for your upcoming deadlines.</article>
             <div class="card" id="manage-tasks-card">
-                <h1>Manage Tasks</h1>
-                <p>Manage your daily,weekly and monthly tasks to increase your productivity.</p>
+                <h1 style="font-weight: 900;">Task Management</h1>
+                <h3>Working towards your goals?</h3>
+                <p>Use NOVA to help you set and achieve your goals and to strive towards a better life.
+                Manage your daily,weekly and monthly tasks to increase your productivity.</p>
                 <p>Click below to go to the goal management dashboard.</p>
                 <h4><a href="{% url 'taskmanagement_app:tasks' %}">Manage Tasks</a></h4>
             </div>
@@ -23,12 +24,30 @@
    <section id="section2">
         <div class="img2"></div>
         <div>
-            <article><h3>Working towards your goals?</h3><br>Use NOVA to help you set and achieve your goals and to strive towards a better life.</article>
+            
             <div class="card" id="work-towards-goal">
-                <h1>Goals</h1>
-                <p>Set your goals and track your progress.</p>
+                <h1 style="font-weight: 900;">Goal Tracker</h1>
+                <p>Working towards your goals?Use NOVA to help you set and achieve your goals and to strive towards a better life.
+                Set your goals and track your progress.</p>
                 <p>Click below to go to the goal management dashboard.</p>
-                <h4><a href="{% url 'taskmanagement_app:tasks' %}">Track Goals</a></h4>
+                <h4><a href="#">Track Goals</a></h4>
             </div>
         </div>
+    </section>
+
+    <section id="section3">
+        <div>
+            <div class="card" id="manage-tasks-card">
+                <h1 style="font-weight: 900;">Learning Log</h1>
+                <p>Are you a student struggling to keep track your academics?Try using NOVA's learning log which helps you keep track of anything new you have learned and helps you in your academic journey.
+                Keep track of what you are learning using Learning Logs</p>
+                <p>Click below to go to Learning Logs.</p>
+                <h4><a href="#">Learning Log</a></h4>
+            </div>
+        </div>
+        <div class="img3"></div>
+   </section> 
+   <footer style="height: 240px; background-color: gray; padding-top: 90px;">
+        <h1 style="margin-left: 120px;  font-weight: 900;">NOVA</h1>
+    </footer>
 {% endblock content %}
