@@ -3,13 +3,15 @@ from .models import Tasks
 from django.http import HttpResponseRedirect, JsonResponse,Http404
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from django.utils import timezone
 # Create your views here.
 @login_required
 def home(request):
     return render(request, 'taskmanagement_app/home.html')
 @login_required
 def tasks(request):
-    tasks = Tasks.objects.filter(owner=request.user).order_by('deadline')
+    today = timezone.localdate()
+    tasks = Tasks.objects.filter(owner=request.user,deadline=today).order_by('deadline')
     context = {'tasks' : tasks}
     return render(request,'taskmanagement_app/tasks.html', context)
 @login_required
