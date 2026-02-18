@@ -1,15 +1,12 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
-    <div>
-      <h1>Hi there {{tasks.owner }}, welcome to your task manager.</h1>
-    </div>
     <div class="tasks">
       <div class="card" id="card1" style="display: flex; flex-direction: row;">
         <div>
           <h1 style="font-weight: 900;">Today's To Do List-Click a task to view details</h1>
           {% for task in tasks %}
             <div class="card" id="card2">
-              <h1>Task - {{task.title}}</h1>
+              <h1><a href="{% url 'taskmanagement_app:task' task.id %}" style="text-decoration: none; color: white;">{{task.title}}</a></h1>
               <h4>Description : {{task.description}}</h4>
               <h4>Date of Assignment : {{task.date_assigned}}</h4>
             </div> 
@@ -18,7 +15,7 @@
           {% endfor %}
             <form action="{% url 'taskmanagement_app:addtask' %}" method="POST">
               {% csrf_token %}
-              <button type="submit"  class="button" style="margin-left: 20px;">
+              <button type="submit"  class="button" style="margin-left: 100px;">
                 Add task
               </button>
             </form>
