@@ -78,6 +78,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'tasks_db' : {
+        'ENGINE' : 'django.db.backends.sqlite3',
+        'NAME' : BASE_DIR / 'tasks.sqlite3',
+    },
+    'logs_db' : {
+        'ENGINE' : 'django.db.backends.sqlite3',
+        'NAME' : BASE_DIR / 'logs.sqlite3',
     }
 }
 
@@ -118,3 +126,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_URL = '/login/'
+
+DATABASE_ROUTERS = ['NOVA2.routers.AppRouter']

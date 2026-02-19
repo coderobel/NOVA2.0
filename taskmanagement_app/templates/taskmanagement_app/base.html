@@ -29,11 +29,11 @@
                         <a href="#" style="font-weight: 900;">Goals</a>
                     </li>
                     <li>
-                        <a href="#" style="font-weight: 900;">LearningLog</a>
+                        <a href="{% url 'learning_logs:home' %}" style="font-weight: 900;">LearningLog</a>
                     </li>
                 </div>
                 <li>
-                    <a href="{% url 'users:login' %}" style="font-weight: 900;">Login</a>
+                    <a href="{% url 'users:login' %}" style="font-weight: 900;">SignIn</a>
                 </li>
                 <li>
                     <a href="{% url 'users:logout' %}" style="font-weight: 900;">Logout</a>

@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('taskmanagement_app.urls', namespace='taskmanagement_app')),
     path('', include('users.urls', namespace = 'users')),
+    path('', include('learning_logs.urls', namespace='learning_logs')),
 ]
