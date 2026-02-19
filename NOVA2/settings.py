@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'taskmanagement_app.apps.TaskmanagementAppConfig',
     'users.apps.UsersConfig',
+    'learning_logs'
 ]
 
 MIDDLEWARE = [

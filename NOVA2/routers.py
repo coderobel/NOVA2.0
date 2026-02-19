@@ -1,3 +1,4 @@
+from django.contrib import admin
 class AppRouter:
     # Map apps to their specific database aliases
     APP_MAP = {
@@ -17,3 +18,25 @@ class AppRouter:
             return db == target_db
         # Ensure other apps (admin, auth) stay in the default DB
         return db == 'default'
+    
+class MultiDBModelAdmin(admin.ModelAdmin):
+    using = 'default'
+
+    def save_model(self, request, obj, form, change):
+        obj.save(using=self.using)
+    def delete_model(self, request, obj):
+        obj.delete(using=self.using)
+    def get_queryset(self, request):
+        return super().get_queryset(request).using(self.using)
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        # If the field is a User (from auth app), always look in 'default'
+        if db_field.related_model._meta.app_label == 'auth':
+            return super().formfield_for_foreignkey(db_field, request, using='default', **kwargs)
+        
+        # Otherwise, use the app's specific database
+        return super().formfield_for_foreignkey(db_field, request, using=self.using, **kwargs)
+
+    def formfield_for_manytomany(self, db_field, request, **kwargs):
+        if db_field.related_model._meta.app_label == 'auth':
+            return super().formfield_for_manytomany(db_field, request, using='default', **kwargs)
+        return super().formfield_for_manytomany(db_field, request, using=self.using, **kwargs)
