@@ -1,0 +1,12 @@
+{% extends 'taskmanagement_app/base.html' %}
+{% block content %}
+<div style="margin-top: 250px; margin-left: 450px;" class="card" id="card">
+    <h1>New Topic</h1>
+    <p>Add a new topic:</p>
+    <form action="{% url 'learning_logs:newtopic' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit" style="border-radius: 20px; margin-left: 70px; margin-top: 40px; width: 200px;">add topic</button>
+    </form>
+</div>
+{% endblock content %}

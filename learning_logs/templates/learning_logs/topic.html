@@ -1,0 +1,21 @@
+{% extends 'taskmanagement_app/base.html' %}
+{% block content %}
+<div style="padding-top: 120px; padding-left: 100px;">
+    <h4>Topic: {{topic}}</h4>
+    <p>Entries:</p>
+    <ul>
+    {% for entry in entries %}  
+        <li>
+            <p>{{ entry.date_assigned }}</p>
+            <p>{{ entry.text|linebreaks }}</p>
+            <a href="{% url 'learning_logs:deleteentry' entry.id %}">Delete Entry</a>
+        </li>
+        {% empty %}
+         <li>    
+            There are no entries for this topic yet.
+         </li>
+    {% endfor %}
+    </ul>
+    <h6><a href="{% url 'learning_logs:deletetopic' topic.id%}">Delete Topic</a></h6>
+</div>
+{% endblock content %}

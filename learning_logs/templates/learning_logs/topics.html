@@ -1,0 +1,14 @@
+{% extends 'taskmanagement_app/base.html' %}
+{% block content %}
+<div style="padding-top: 120px; padding-left: 100px;">
+    <h2>Your Topics: </h2>
+        {% for topic in topics %}
+        <ul>
+            <li><a href="{% url 'learning_logs:topic' topic.id %}">{{topic.text}}</a></li>
+        </ul>
+        {% empty %}
+            <p>You have no topics logged</p>
+        {% endfor %}
+        <a href="{% url 'learning_logs:newtopic' %}">add new topic</a>
+</div>
+{% endblock content %}
