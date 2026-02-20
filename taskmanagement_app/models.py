@@ -6,7 +6,7 @@ class Tasks(models.Model):
     date_assigned = models.DateField(auto_now_add=True)
     deadline = models.DateField()
     description = models.TextField(max_length=200)
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner_id = models.IntegerField()
     class Meta:
         verbose_name_plural = 'Tasks'
 

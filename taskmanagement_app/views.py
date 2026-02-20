@@ -11,13 +11,13 @@ def home(request):
 @login_required
 def tasks(request):
     today = timezone.localdate()
-    tasks = Tasks.objects.filter(owner=request.user,deadline=today).order_by('deadline')
+    tasks = Tasks.objects.filter(owner_id=request.user.id,deadline=today).order_by('deadline')
     context = {'tasks' : tasks}
     return render(request,'taskmanagement_app/tasks.html', context)
 @login_required
 def task(request, task_id):
     task = Tasks.objects.get(id=task_id)
-    if task.owner != request.user:
+    if task.owner_id != request.user.id:
         raise Http404
     context = {'task' : task}
     return render(request, 'taskmanagement_app/task.html', context)
@@ -32,13 +32,13 @@ def addtask(request):
             error = True
             context = {'error' : error}
             return render(request,'taskmanagement_app/addtask.html', context)
-        Tasks.objects.create(title = task, deadline = deadline, description = description, owner=request.user)
+        Tasks.objects.using('tasks_db').create(title = task, deadline = deadline, description = description, owner_id=request.user.id)
         return HttpResponseRedirect(reverse('taskmanagement_app:tasks'))
     return render(request,'taskmanagement_app/addtask.html')
 @login_required
 def updatetask(request, task_id):
     task = Tasks.objects.get(id=task_id)
-    if task.owner != request.user:
+    if task.owner_id != request.user.id:
         raise Http404
     if request.method == "POST":
         new_task = request.POST.get('task')
