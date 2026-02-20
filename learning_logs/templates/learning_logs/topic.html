@@ -1,10 +1,11 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
 <div style="padding-top: 120px; padding-left: 100px;">
-    <h4>Topic: {{topic}}</h4>
-    <p>Entries:</p>
-    <ul>
-    {% for entry in entries %}  
+    <div class="card" id="card3">
+        <h4>Topic: {{topic}}</h4>
+        <p>Entries:</p>
+        <ul>
+        {% for entry in entries %}  
         <li>
             <p>{{ entry.date_assigned }}</p>
             <p>{{ entry.text|linebreaks }}</p>
@@ -12,13 +13,16 @@
             <a href="{% url 'learning_logs:updateentry' entry.id %}">Update Entry</a>
         </li>
         {% empty %}
-         <li>    
+        <li>    
             There are no entries for this topic yet.
-         </li>
-    {% endfor %}
-    </ul>
-    <h6><a href="{% url 'learning_logs:newentry' topic.id%}">Add new entry</a></h6>
-    <h6><a href="{% url 'learning_logs:updatetopic' topic.id%}">Update Topic</a></h6>
-    <h6><a href="{% url 'learning_logs:deletetopic' topic.id%}">Delete Topic</a></h6>
+        </li>
+        {% endfor %}
+        </ul>
+        <h6><a href="{% url 'learning_logs:newentry' topic.id%}">Add new entry</a></h6>
+    </div>
+    <div style="display:flex; flex-direction: row; gap:20px; margin-top: 30px; margin-left: 500px;">
+        <h6><a href="{% url 'learning_logs:updatetopic' topic.id%}">Update Topic</a></h6>
+        <h6><a href="{% url 'learning_logs:deletetopic' topic.id%}">Delete Topic</a></h6>
+    </div>
 </div>
 {% endblock content %}
