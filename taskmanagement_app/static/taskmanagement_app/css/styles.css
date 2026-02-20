@@ -310,6 +310,20 @@ button a{
     transition: 1s;
 }
 
+#card4 {
+    background-color: rgb(168, 165, 165);
+    padding: 40px;
+    width: 350px;
+    border-radius: 20px;
+    margin-top: 70px;
+    margin-left: 100px;
+}
+#card4:hover {
+    background-color: black;
+    color: white;
+    transition: 1s;
+}
+
 .addtask-card {
     background-color: rgb(168, 165, 165);
     padding: 40px;
