@@ -9,6 +9,7 @@
             <p>{{ entry.date_assigned }}</p>
             <p>{{ entry.text|linebreaks }}</p>
             <a href="{% url 'learning_logs:deleteentry' entry.id %}">Delete Entry</a>
+            <a href="{% url 'learning_logs:updateentry' entry.id %}">Update Entry</a>
         </li>
         {% empty %}
          <li>    
@@ -17,6 +18,7 @@
     {% endfor %}
     </ul>
     <h6><a href="{% url 'learning_logs:newentry' topic.id%}">Add new entry</a></h6>
+    <h6><a href="{% url 'learning_logs:updatetopic' topic.id%}">Update Topic</a></h6>
     <h6><a href="{% url 'learning_logs:deletetopic' topic.id%}">Delete Topic</a></h6>
 </div>
 {% endblock content %}

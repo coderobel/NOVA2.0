@@ -40,8 +40,31 @@ def deletetopic(request, topic_id):
     topic = Topic.objects.get(id=topic_id)
     topic.delete()
     return HttpResponseRedirect(reverse('learning_logs:home'))
+def updatetopic(request, topic_id):
+    topic = Topic.objects.get(id = topic_id)
+    if request.method != 'POST':
+        form = TopicForm(instance=topic)
+    else: 
+        form = TopicForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic.id]))
+    context = {'form' : form, 'topic' : topic}
+    return render(request, 'learning_logs/updatetopic.html', context)
 def deleteentry(request, entry_id):
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
     entry.delete()
     return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic.id]))
+def updateentry(request, entry_id):
+    entry = Entry.objects.get(id=entry_id)
+    topic = entry.topic
+    if request.method != 'POST':
+        form = EntryForm(instance=entry)
+    else:
+        form = EntryForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('learning_logs:topic',args=[topic.id]))
+    context = {'form' : form, 'entry' : entry, 'topic' : topic}
+    return render(request, 'learning_logs/updateentry.html', context)

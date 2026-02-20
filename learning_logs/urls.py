@@ -7,6 +7,8 @@ urlpatterns = [
     path('topic/<int:topic_id>', views.topic, name='topic'),
     path('newtopic/', views.newtopic, name='newtopic'),
     path('deletetopic/<int:topic_id>', views.deletetopic, name='deletetopic'),
+    path('updatetopic/<int:topic_id>', views.updatetopic, name='updatetopic'),
     path('newentry/<int:topic_id>', views.newentry, name='newentry'),
     path('deleteentry/<int:entry_id>', views.deleteentry, name='deleteentry'),
+    path('updateentry/<int:entry_id>', views.updateentry, name='updateentry'),
 ]
