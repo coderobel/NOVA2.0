@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js"></script>
     <title>NOVA</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'taskmanagement_app/images/favicon.ico' %}">
   </head>
 
   <body class="body1">
@@ -24,9 +25,6 @@
                     </li>
                     <li>
                         <a href="{% url 'taskmanagement_app:tasks' %}" style="font-weight: 900;">Tasks</a>
-                    </li>
-                    <li>
-                        <a href="#" style="font-weight: 900;">Goals</a>
                     </li>
                     <li>
                         <a href="{% url 'learning_logs:home' %}" style="font-weight: 900;">LearningLog</a>
