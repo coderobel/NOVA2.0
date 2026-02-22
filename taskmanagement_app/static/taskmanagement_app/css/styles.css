@@ -18,7 +18,7 @@ p {
     font-family:  'IBM Plex Sans', sans-serif;;
 }
 .body1 {
-     background-color: rgb(255, 252, 248);
+     background-color: rgb(172, 177, 179);
 }
 header {
     display: flex;
@@ -38,7 +38,7 @@ nav {
     font-size: 25px;
     font-weight: 1000;
     font-family: 'IBM Plex Sans-Bold';
-    color: rgb(20, 32, 62, 50%)
+    color: rgb(2, 3, 7);
 }
 #Nova-h1:hover {
     color: rgb(2, 3, 7);
@@ -58,16 +58,15 @@ nav ul {
 }
 
 nav li a{
-    color: rgb(20, 32, 62, 50%);
+    color: black;
     margin-right: 28px;
     font-size: 21px;
     font-weight:400;
     text-decoration: none;
 }
 
-nav li a:hover {
-    color: rgb(20, 32, 62);
-    transition-duration: 0.5s;
+nav li a:hover { 
+    color: black;
 }
 #welcome-to-nova {
     padding-top: 200px;
@@ -400,4 +399,13 @@ button a{
     flex-direction: row;
     margin-left: 200px;
     gap: 20px;
+}
+.sunlight {
+    background-image: url("/static/taskmanagement_app/images/sunlight.png");
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 80px;
 }
