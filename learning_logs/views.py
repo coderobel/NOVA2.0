@@ -3,16 +3,20 @@ from .models import Topic,Entry
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .forms import TopicForm, EntryForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
+@login_required
 def home(request):
     topics = Topic.objects.all()
     context = {'topics' : topics}
     return render(request, 'learning_logs/home.html', context)
+@login_required
 def topic(request, topic_id):
     topic = Topic.objects.get(id = topic_id)
     entries = topic.entry_set.order_by('-date_assigned')
     context = {'topic' : topic, 'entries' : entries}
     return render(request, 'learning_logs/topic.html', context)
+@login_required
 def newtopic(request):
     if request.method != 'POST':
         form = TopicForm()
@@ -23,6 +27,7 @@ def newtopic(request):
             return HttpResponseRedirect(reverse('learning_logs:home'))
     context = {'form' : form}
     return render(request, 'learning_logs/newtopic.html', context)
+@login_required
 def newentry(request, topic_id): 
     topic = Topic.objects.get(id=topic_id)
     if request.method != 'POST':
@@ -36,10 +41,12 @@ def newentry(request, topic_id):
             return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic.id]))
     context = {'form' : form, 'topic' : topic}
     return render(request,'learning_logs/newentry.html', context)
+@login_required
 def deletetopic(request, topic_id):
     topic = Topic.objects.get(id=topic_id)
     topic.delete()
     return HttpResponseRedirect(reverse('learning_logs:home'))
+@login_required
 def updatetopic(request, topic_id):
     topic = Topic.objects.get(id = topic_id)
     if request.method != 'POST':
@@ -51,11 +58,13 @@ def updatetopic(request, topic_id):
             return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic.id]))
     context = {'form' : form, 'topic' : topic}
     return render(request, 'learning_logs/updatetopic.html', context)
+@login_required
 def deleteentry(request, entry_id):
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
     entry.delete()
     return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic.id]))
+@login_required
 def updateentry(request, entry_id):
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
