@@ -7,30 +7,40 @@ class AppRouter:
 
     # In NOVA2/routers.py
     def db_for_read(self, model, **hints):
+        if model._meta.app_label in ['auth', 'contenttypes', 'admin', 'sessions']:
+            return 'default'
         if model._meta.app_label == 'taskmanagement_app':
             return 'tasks_db'
         if model._meta.app_label == 'learning_logs':
             return 'logs_db'
-    # Everything else (auth, sessions, admin) stays here:
         return 'default' 
 
     def db_for_write(self, model, **hints):
-    # Same logic as db_for_read
-        return self.db_for_read(model, **hints)
+        if model._meta.app_label in ['auth', 'contenttypes', 'admin', 'sessions']:
+            return 'default'
+
+        if model._meta.app_label == 'learning_logs':
+            return 'logs_db'
+
+        if model._meta.app_label == 'taskmanagement_app':
+            return 'tasks_db'
+
+        return 'default'
 
     def allow_relation(self, obj1, obj2, **hints):    
-        if (
-            obj1._meta.app_label == 'auth' or 
-            obj2._meta.app_label == 'auth'
-        ):
             return True
-        return None
+        
     
     def allow_migrate(self, db, app_label, model_name=None, **hints):
+        if app_label in ['auth', 'contenttypes', 'admin', 'sessions']:
+            return db == 'default'
+
+        if app_label == 'learning_logs':
+            return db == 'logs_db'
+
         if app_label == 'taskmanagement_app':
             return db == 'tasks_db'
 
-    # Everything else (auth, admin, learning_logs)
         return db == 'default'
     
 class MultiDBModelAdmin(admin.ModelAdmin):
