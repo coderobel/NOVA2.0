@@ -1,21 +1,24 @@
 from django.shortcuts import render
 from .models import Topic,Entry
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.urls import reverse
 from .forms import TopicForm, EntryForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required
 def home(request):
-    topics = Topic.objects.all()
+    topics = Topic.objects.using('logs_db').filter(owner_id = request.user.id)
     context = {'topics' : topics}
     return render(request, 'learning_logs/home.html', context)
 @login_required
 def topic(request, topic_id):
     topic = Topic.objects.get(id = topic_id)
-    entries = topic.entry_set.order_by('-date_assigned')
-    context = {'topic' : topic, 'entries' : entries}
-    return render(request, 'learning_logs/topic.html', context)
+    if topic.owner_id != request.user.id:
+        raise Http404
+    else:
+        entries = topic.entry_set.order_by('-date_assigned')
+        context = {'topic' : topic, 'entries' : entries}
+        return render(request, 'learning_logs/topic.html', context)
 @login_required
 def newtopic(request):
     if request.method != 'POST':
@@ -23,7 +26,9 @@ def newtopic(request):
     else: 
         form = TopicForm(request.POST)
         if form.is_valid():
-            form.save()
+            topic = form.save(commit=False)
+            topic.owner_id = request.user.id
+            topic.save(using='logs_db')
             return HttpResponseRedirect(reverse('learning_logs:home'))
     context = {'form' : form}
     return render(request, 'learning_logs/newtopic.html', context)
@@ -52,7 +57,7 @@ def updatetopic(request, topic_id):
     if request.method != 'POST':
         form = TopicForm(instance=topic)
     else: 
-        form = TopicForm(data=request.POST)
+        form = TopicForm(data=request.POST, instance=topic)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('learning_logs:topic', args=[topic.id]))
