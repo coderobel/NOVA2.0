@@ -29,6 +29,7 @@ h1 {
 }
 nav {
     background-color: rgba(221, 232, 75, 0.991);
+    scrollbar-color: rgba(221, 232, 75);
 }
 
 
@@ -74,14 +75,14 @@ nav li a:hover {
     font-size: 30px;
     font-weight:1000;
     font-family: 'IBM Plex Sans-Bold', sans-serif;
-    background-image: url('../images/download4.jpg');
+    background-image: url('../images/download7.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 900px;
+    height: 750px;
 }
 #welcome-to-nova-h1 {
-    margin-left: 250px;
+    margin-left: 10px;
 }
 #welcome-to-nova-p1 {
     margin-top: 40px;
@@ -96,8 +97,9 @@ nav li a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
     padding-left: 50px;
+    padding-top: 35px;
     height: 700px;
 }
 #section3 {
@@ -304,18 +306,19 @@ button a{
     transition: 1s;
 }
 #welcome {
-    background-color: rgba(221, 232, 75, 0.991);
-    padding: 40px;
-    width: 1000px;
+    background-color: rgba(137, 137, 123, 0.991);
+    width: 800px;
     border-radius: 20px;
     margin-top: 20px;
-    margin-left: 150px;
+    margin-left: 200px;
+    color: rgb(198, 185, 5);
+    padding: 40px;
 }
 #welcome:hover {
-    background-color: rgba(242, 255, 0, 0.991);
-    color: black;
     padding: 45px;
     transition: 1s;
+    background-color: rgba(93, 93, 90, 0.991);
+    color: rgba(242, 255, 0);
 }
 #card2 {
     background-color: rgb(78, 76, 76);

@@ -13,19 +13,27 @@
 
   <body>
     <header class="card" id="nav">
-        <nav>
+         <nav>
             <ul> 
+                <li id="Nova-h1">
+                    NOVA
+                </li>
+                <div class="nav-menu">
+                    <li>
+                        <a href="{% url 'taskmanagement_app:home' %}" style="font-weight: 900;">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'taskmanagement_app:tasks' %}" style="font-weight: 900;">Tasks</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'learning_logs:home' %}" style="font-weight: 900;">Logs</a>
+                    </li>
+                </div>
                 <li>
-                    <a href="{% url 'taskmanagement_app:home' %}" id="Nova-h1">NOVA</a>
+                    <a href="{% url 'users:register' %}" style="font-weight: 900;">SignUp</a>
                 </li>
                 <li>
-                    <a href="{% url 'taskmanagement_app:home' %}">Home</a>
-                </li>
-                <li>
-                    <a href="{% url 'taskmanagement_app:tasks' %}">Tasks</a>
-                </li>
-                <li>
-                    <a href="#">Goals</a>
+                    <a href="{% url 'users:logout' %}" style="font-weight: 900;">Logout</a>
                 </li>
             </ul>
         </nav>
