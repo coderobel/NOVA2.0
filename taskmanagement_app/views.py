@@ -5,7 +5,6 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 # Create your views here.
-@login_required
 def home(request):
     return render(request, 'taskmanagement_app/home.html')
 @login_required

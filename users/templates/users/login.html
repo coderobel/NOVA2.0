@@ -3,11 +3,11 @@
   {% if form.errors %}
     <p>Your username and password didn't match. Please try again.</p>
   {% endif %}
-  <div class="card" id="card2" style="margin-top: 200px; margin-left: 400px;">
+  <div class="card" id="login" style="margin-top: 200px; margin-left: 400px;">
 
-    <h3>Login</h3>
+    <h2 style="padding-left: 170px; padding-bottom: 30px; font-weight: 900;">Login</h2>
               
-    <form method="post" action="{% url 'users:login' %}" >
+    <form method="post" action="{% url 'users:login' %}" style="padding-left: 100px;">
         {% csrf_token %}
         {{ form.as_p }}      
         <p><a href="{% url 'users:register' %}" style="color: black;">SignUp</a> If you don't have an account</p>
