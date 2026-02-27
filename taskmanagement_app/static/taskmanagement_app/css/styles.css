@@ -60,7 +60,7 @@ nav ul {
 
 nav li a{
     color: black;
-    margin-right: 28px;
+    margin-right: 39px;
     font-size: 21px;
     font-weight:400;
     text-decoration: none;
@@ -261,7 +261,7 @@ button a{
     background-color: rgb(109, 104, 104);
 }
 .tasks {
-    background-image: url('../images/download.jpg');
+    background-image: url('../images/download7.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -269,7 +269,7 @@ button a{
     padding-top: 30px;
 }
 .task {
-    background-image: url('../images/download.jpg');
+    background-image: url('../images/download7.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -389,18 +389,17 @@ button a{
 }
 
 #calendar-view {
-    background-color: rgb(78, 76, 76);
-    color: white;
+    background-color: rgb(233, 226, 12);
+    color: black;
     padding: 40px;
-    width: 380px;
-    height: 280px;
+    width: 420px;
+    height: 340px;
     border-radius: 20px;
     margin-top: 100px;
 }
 #calendar-view:hover {
-    padding: 38px;
-    background-color: gray;
-    color: white;
+    padding: 43px;
+    background-color: rgb(233, 226, 12);;
     transition: 1s;
 }
 #your-tasks{

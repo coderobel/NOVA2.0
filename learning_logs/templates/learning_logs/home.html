@@ -1,9 +1,9 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
-<div style="padding-top:120px; padding-left: 50px; padding-bottom:140px; font-weight: 900; background-color: rgb(234, 229, 229);">
-    <h1 style="margin-left: 250px;">Welcome to your Logs Page</h1>
+<div style="padding-top:120px; padding-left: 50px; padding-bottom:180px; font-weight: 900; background-color: rgb(201, 201, 36);">
+    <h1 style="margin-left: 250px; font-weight: 900;">Welcome to your Logs Page</h1>
     <div class="card" id="card3">
-        <h2 style="margin-bottom: 30px; margin-top: 30px;">Your Topics</h2>
+        <h2 style="margin-bottom: 30px; margin-top: 30px; font-weight: 700;">Your Topics</h2>
         {% for topic in topics %}
         <ul>
             <li><a href="{% url 'learning_logs:topic' topic.id %}">{{topic.text}}</a></li>

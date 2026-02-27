@@ -1,14 +1,15 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
-<div style="padding-top:60px;  padding-bottom:200px;  background-color: rgb(234, 229, 229);">
-    <div style="padding-top: 120px; padding-left: 100px;">
-        <h1>Add a New Entry for - </h1>
-        <h1>{{topic.text}}</h1>
+<div style="padding-top:100px;  padding-left: 30px; padding-bottom:100px; background-color: rgb(201, 201, 36);">
+    <h1>Add a New Entry for - </h1>
+    <h1>{{topic.text}}</h1>
+</div>
+    <div style="padding-top: 10px; padding-bottom: 150px; padding-left: 70px; background-color: rgb(201, 201, 36);">
         <form action="{% url 'learning_logs:newentry' topic.id%}" method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <button name="submit">Add entry</button>
         </form>
     </div>
-</div>
+
 {% endblock content %}

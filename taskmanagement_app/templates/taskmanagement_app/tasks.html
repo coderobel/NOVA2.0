@@ -3,7 +3,9 @@
     <div class="tasks">
       <div class="card" id="card1" style="display: flex; flex-direction: row;">
         <div>
-          <h1 style="font-weight: 900;">Today's To Do List-Click a task to view details</h1>
+          <div class="card-header" style="border-radius: 15px;">
+            <h1 style="font-weight: 900;">Today's To Do List-Click a task to view details</h1>
+          </div>
           {% for task in tasks %}
             <div class="card" id="card2">
               <h1><a href="{% url 'taskmanagement_app:task' task.id %}" style="text-decoration: none; color: white;">{{task.title}}</a></h1>
@@ -21,14 +23,16 @@
             </form>
         </div>
         <div class="card" id="calendar-view">
-          <h3 style="font-weight: 900;">Monthly View</h3>
-          <p>Have a look at what this month has for you</p>
-          <form action="{% url 'taskmanagement_app:calendarview' %}" method="POST">
-            {% csrf_token %}
-            <button  class="button">
-              View Calendar
-            </button>
-          </form>
+          <div class="card-header" style=" margin-bottom: 10px; border-radius: 15px; ">
+            <h3 style="font-weight: 900;">Calendar</h3>
+          </div>
+            <p>Have a look at what this month has for you</p>
+            <form action="{% url 'taskmanagement_app:calendarview' %}" method="POST">
+              {% csrf_token %}
+              <button  class="button">
+               View Calendar
+              </button>
+            </form>
         </div>
     </div>
 {% endblock content %}
