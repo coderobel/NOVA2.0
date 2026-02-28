@@ -1,6 +1,6 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
-<div style="padding-top:60px;  padding-bottom:120px;  background-color: rgb(201, 201, 36);">
+<div>
     <div style="padding-top: 40px; padding-left: 80px; margin-left: 450px; margin-top: 200px;" class="card" id="card4">
         <h1>Update Topic</h1>
         <form action="{% url 'learning_logs:updatetopic' topic.id %}" method="post">

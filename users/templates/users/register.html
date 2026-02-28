@@ -1,7 +1,7 @@
 {% extends "taskmanagement_app/base.html" %}
 {% block content %}
   
-  <div class="card" id="card1">
+  <div class="card" id="register" style="background-color: yellow;">
     <h3>Signup</h3>
     <form method="post" action="{% url 'users:register' %}" >
         {% csrf_token %}
