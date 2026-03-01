@@ -1,7 +1,7 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
-<div style="padding-top:120px; padding-left: 50px; padding-bottom:180px; font-weight: 900;">
-    <h1 style="margin-left: 250px; font-weight: 900;">Welcome to your Logs Page</h1>
+<div style="padding-top:180px; padding-left: 170px; padding-bottom:180px; font-weight: 900; font-family:cursive ;">
+    <h1 style="margin-left: 200px; font-weight: 900;">Welcome to your Logs Page</h1>
     <div class="card" id="card3">
         <h2 style="margin-bottom: 30px; margin-top: 30px; font-weight: 700;">Your Topics</h2>
         {% for topic in topics %}
@@ -11,7 +11,7 @@
         {% empty %}
             <p>You have no topics logged</p>
         {% endfor %}
-        <a href="{% url 'learning_logs:newtopic' %}">add new topic</a>
+        <button style="width: 200px; margin-left: 460px;" class="btn btn-primary "><a href="{% url 'learning_logs:newtopic' %}" style="color: white;">Add New Topic</a></button>
     </div>
 </div>
 {% endblock content %}

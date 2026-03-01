@@ -1,13 +1,13 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
-<div>
-    <div style="padding-top: 120px; padding-left: 100px;">
+<div style="margin-left: 300px;">
+    <div style="padding-top: 140px; padding-left: 100px;">
         <h1>Update Entry for - </h1>
         <h1>{{topic.text}}</h1>
-        <form action="{% url 'learning_logs:updateentry' entry.id%}" method="post">
+        <form action="{% url 'learning_logs:updateentry' entry.id%}" method="post" style="padding-top: 40px;">
             {% csrf_token %}
             {{ form.as_p }}
-            <button name="submit">Update Entry</button>
+            <button name="submit" class="btn btn-primary" style="margin-left: 480px;">Update Entry</button>
         </form>
     </div>
 </div>

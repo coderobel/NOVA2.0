@@ -7,7 +7,7 @@
         <form action="{% url 'learning_logs:newtopic' %}" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button name="submit" style="border-radius: 20px; margin-left: 70px; margin-top: 40px; width: 200px;">add topic</button>
+            <button name="submit" class="btn btn-primary" style="margin-left: 140px; margin-top: 30px;">add topic</button>
         </form>
     </div>
 </div>

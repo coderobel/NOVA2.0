@@ -1,14 +1,14 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
-<div style="padding-top:100px;  padding-left: 30px; padding-bottom:100px;">
-    <h1>Add a New Entry for - </h1>
+<div style="padding-top:150px;  padding-left: 220px; padding-bottom:50px;">
+    <h1 style="margin-left: 180px;">Add a New Entry for - </h1>
     <h1>{{topic.text}}</h1>
 </div>
-    <div style="padding-top: 10px; padding-bottom: 150px; padding-left: 70px;">
+    <div style="padding-top: 0px; padding-bottom: 150px; padding-left: 320px;">
         <form action="{% url 'learning_logs:newentry' topic.id%}" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button name="submit">Add entry</button>
+            <button name="submit" class="btn btn-primary" style="margin-left: 600px;">Add entry</button>
         </form>
     </div>
 

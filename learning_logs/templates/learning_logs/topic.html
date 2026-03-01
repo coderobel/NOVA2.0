@@ -1,16 +1,16 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
 <div>
-    <div class="card" id="card3">
-        <h4>Topic: {{topic}}</h4>
-        <p>Entries:</p>
+    <div class="card" id="card3" style="margin-top: 160px;">
+        <h2 style="font-weight: 700; margin-bottom: 15px;">Topic: {{topic}}</h2>
+        <h4 style="margin-bottom: 16px; font-weight: 700;">Entries:</h4>
         <ul>
         {% for entry in entries %}  
-        <li>
+        <li class="entries">
             <p>{{ entry.date_assigned }}</p>
             <p>{{ entry.text|linebreaks }}</p>
-            <a href="{% url 'learning_logs:deleteentry' entry.id %}">Delete Entry</a>
-            <a href="{% url 'learning_logs:updateentry' entry.id %}">Update Entry</a>
+            <button class="btn btn-primary"><a href="{% url 'learning_logs:deleteentry' entry.id %}" style="color: white;">Delete Entry</a></button>
+            <button class="btn btn-primary"><a href="{% url 'learning_logs:updateentry' entry.id %}" style="color: white;">Update Entry</a></button>
         </li>
         {% empty %}
         <li>    
@@ -18,11 +18,11 @@
         </li>
         {% endfor %}
         </ul>
-        <h6><a href="{% url 'learning_logs:newentry' topic.id%}">Add new entry</a></h6>
+        <button class="btn btn-primary" style="width: 200px;margin-left: 500px;"><h6><a href="{% url 'learning_logs:newentry' topic.id%}" style="color: white;">Add new entry</a></h6></button>
     </div>
     <div style="display:flex; flex-direction: row; gap:20px; margin-top: 30px; margin-left: 500px;">
-        <h6><a href="{% url 'learning_logs:updatetopic' topic.id%}">Update Topic</a></h6>
-        <h6><a href="{% url 'learning_logs:deletetopic' topic.id%}">Delete Topic</a></h6>
+        <button class="btn btn-primary"><h6><a href="{% url 'learning_logs:updatetopic' topic.id%}" style="color: white;">Update Topic</a></h6></button>
+        <button class="btn btn-primary"><h6><a href="{% url 'learning_logs:deletetopic' topic.id%}" style="color: white;">Delete Topic</a></h6></button>
     </div>
 </div>
 {% endblock content %}

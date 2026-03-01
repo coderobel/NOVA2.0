@@ -23,11 +23,16 @@ header {
 }
 h1 {
     display: inline;
+
 }
 nav {
     background-color: rgba(221, 232, 75, 0.991);
 }
-
+nav:hover {
+    background-color: rgba(230, 244, 39, 0.991);
+    padding: 6px;
+    transition: 1s;
+}
 .body1 {
     background-image: url('../images/download7.jpg');
     background-position: center;
@@ -40,7 +45,7 @@ nav {
     font-size: 25px;
     font-weight: 1000;
     font-family: 'IBM Plex Sans-Bold';
-    color: rgb(2, 3, 7);
+    color: rgb(89, 90, 94);
 }
 #Nova-h1:hover {
     color: rgb(2, 3, 7);
@@ -60,7 +65,7 @@ nav ul {
 }
 
 nav li a{
-    color: black;
+    color: rgb(89, 86, 86);
     margin-right: 39px;
     font-size: 21px;
     font-weight:400;
@@ -69,6 +74,7 @@ nav li a{
 
 nav li a:hover { 
     color: black;
+    transition: 0.5s;
 }
 #welcome-to-nova {
     padding-top: 200px;
@@ -111,7 +117,7 @@ nav li a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding-bottom: 300px;
+    padding-bottom: 330px;
     padding-left: 50px;
     height: 800px;
 }
@@ -459,4 +465,16 @@ button a{
     background-position: center;
     background-repeat: no-repeat;
     margin-left: 80px;
+}
+.entries {
+    background-color: rgb(245, 245, 102); 
+    border-radius: 10px; 
+    padding: 20px; 
+    color: black;
+    margin-bottom: 10px;
+}
+.entries:hover {
+    background-color: yellow;
+    padding: 24px;
+    transition: 0.3s;
 }

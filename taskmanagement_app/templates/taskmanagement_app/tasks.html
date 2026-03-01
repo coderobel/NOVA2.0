@@ -3,12 +3,12 @@
     <div class="tasks">
       <div class="card" id="card1" style="display: flex; flex-direction: row;">
         <div>
-          <div class="card-header" style="border-radius: 15px;">
-            <h1 style="font-weight: 900;">Today's To Do List-Click a task to view details</h1>
+          <div class="card-header" style="border-radius: 15px;  background-color: rgb(247, 247, 36);">
+            <h1 style="font-weight: 900; color: black;">Today's To Do List-Click a task to view details</h1>
           </div>
           {% for task in tasks %}
-            <div class="card" id="card2">
-              <h1><a href="{% url 'taskmanagement_app:task' task.id %}" style="text-decoration: none; color: white;">{{task.title}}</a></h1>
+            <div class="card" id="card2" style="background-color: rgb(247, 247, 36); color: black;">
+              <h1><a href="{% url 'taskmanagement_app:task' task.id %}" style="text-decoration: none; color: black;">{{task.title}}</a></h1>
               <h4>Description : {{task.description}}</h4>
               <h4>Date of Assignment : {{task.date_assigned}}</h4>
             </div> 

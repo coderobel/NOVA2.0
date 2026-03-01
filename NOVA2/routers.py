@@ -1,9 +1,6 @@
 from django.contrib import admin
 class AppRouter:
     # Map apps to their specific database aliases
-    APP_MAP = {
-        'taskmanagement_app': 'tasks_db',
-    }
 
     # In NOVA2/routers.py
     def db_for_read(self, model, **hints):
