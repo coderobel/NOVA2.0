@@ -78,11 +78,11 @@ nav li a:hover {
 }
 #welcome-to-nova {
     padding-top: 200px;
-    padding-bottom: 220px;
+    padding-bottom: 280px;
     font-size: 30px;
     font-weight:1000;
     font-family: 'IBM Plex Sans-Bold', sans-serif;
-    background-image: url('../images/download7.jpg');
+    background-image: url('../images/nova1.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -100,11 +100,11 @@ nav li a:hover {
 }
 #section1 {
     align-items: center;
-    background-image: url('../images/tasks1.jpg');
+    background-image: url('../images/todo.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding-bottom: 0px;
+    padding-bottom: 90px;
     padding-left: 50px;
     padding-top: 35px;
     height: 700px;
@@ -113,7 +113,7 @@ nav li a:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-image: url('../images/studying.jpg');
+    background-image: url('../images/image.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -189,9 +189,10 @@ article {
 #manage-tasks-card {
     background-color: rgba(221, 232, 75, 0.991);
     padding: 40px;
-    width: 1130px;
+    width: 1100px;
     border-radius: 20px;
     margin-top: 100px;
+    margin-left: 25px;
     display: flex;
     flex-direction: column;
     color: black;
