@@ -1,6 +1,6 @@
 {% extends "taskmanagement_app/base.html" %}
 {% block content %}
-  
+<div id="logs" style="padding-bottom: 100px; padding-top: 100px;">
   <div class="card" id="register" style="background-color: yellow;">
     <h3>Signup</h3>
     <form method="post" action="{% url 'users:register' %}" >
@@ -10,4 +10,5 @@
         <input type="hidden" name="next" value="{% url 'taskmanagement_app:home' %}" />
     </form>
   </div>
+</div> 
 {% endblock content %}

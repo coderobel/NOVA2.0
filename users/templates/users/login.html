@@ -1,6 +1,7 @@
 {% extends "taskmanagement_app/base.html" %}
 {% block content %}
-  {% if form.errors %}
+<div id="logs" style="padding-bottom: 100px; padding-top: 100px;">
+   {% if form.errors %}
     <p>Your username and password didn't match. Please try again.</p>
   {% endif %}
   <div class="card" id="login" style="margin-top: 200px; margin-left: 400px; background-color: yellow;">
@@ -16,4 +17,5 @@
         
     </form>
   </div>
+</div>
 {% endblock content %}

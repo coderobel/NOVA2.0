@@ -191,7 +191,7 @@ article {
     padding: 40px;
     width: 1100px;
     border-radius: 20px;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: 25px;
     display: flex;
     flex-direction: column;
@@ -258,7 +258,7 @@ button a{
     background-color: rgb(109, 104, 104);
 }
 .tasks {
-    background-image: url('../images/download7.jpg');
+    background-image: url('../images/nova1.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -266,7 +266,7 @@ button a{
     padding-top: 30px;
 }
 .task {
-    background-image: url('../images/download7.jpg');
+    background-image: url('../images/nova1.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -351,7 +351,7 @@ button a{
     color: black;
 }
 #login:hover {
-    background-color: rgba(221, 232, 75, 0.991);;
+    background-color: rgba(221, 232, 75, 0.991);
     transition: 1s;
 }
 #card3 {
@@ -478,4 +478,10 @@ button a{
     background-color: yellow;
     padding: 24px;
     transition: 0.3s;
+}
+#logs {
+    background-image: url('../images/image.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
