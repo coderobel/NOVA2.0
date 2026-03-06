@@ -1,6 +1,7 @@
 {% extends 'taskmanagement_app/base.html' %}
 {% block content %}
-<form action="{% url 'taskmanagement_app:updatetask' task.id%}" method="post" class="card" id="card1">
+<div id="logs" style="padding-top: 40px; padding-bottom: 75px;">
+    <form action="{% url 'taskmanagement_app:updatetask' task.id%}" method="post" class="card" id="card1">
     
     {% csrf_token %}
     <h3 class="card-headers">Edit Tasks</h3>
@@ -16,9 +17,10 @@
 
    {% if  error %}
         <div class="alert alert-info">
-            <p>Task field and deadline should not be empty</p>
+            <p>{{error}}</p>
         </div>
     {% endif %}
     <button type="submit" class="button" id="submit">Submit</button>
 </form>
+</div>
 {% endblock content %}

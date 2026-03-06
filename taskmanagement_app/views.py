@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect, JsonResponse,Http404
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from django.core.exceptions import ValidationError
 # Create your views here.
 def home(request):
     return render(request, 'taskmanagement_app/home.html')
@@ -40,22 +41,28 @@ def updatetask(request, task_id):
     if task.owner_id != request.user.id:
         raise Http404
     if request.method == "POST":
-        new_task = request.POST.get('task')
-        new_desc = request.POST.get('description')
-        new_due_date=request.POST.get('due-date')
+        try:
+            new_task = request.POST.get('task')
+            new_desc = request.POST.get('description')
+            new_due_date=request.POST.get('due-date')
 
-        error = False
 
-        if new_task:
-            task.title = new_task
-            task.description = new_desc
-            task.deadline = new_due_date
-            task.save()
-            return HttpResponseRedirect(reverse('taskmanagement_app:tasks'))
-        else:
-            error = True
-            context = {'task' : task, 'error' : error}
-            return render(request,'taskmanagement_app/updatetask.html', context)
+            if new_task:
+                task.title = new_task
+                task.description = new_desc
+                task.deadline = new_due_date
+
+                if new_due_date == "":
+                    task.deadline = None
+                task.full_clean()
+                task.save()
+                return HttpResponseRedirect(reverse('taskmanagement_app:tasks'))
+        except ValidationError as e:
+            error_message = "Invalid date format. Please use YYYY-MM-DD."
+            return render(request, 'taskmanagement_app/updatetask.html', {
+                'task': task,
+                'error': error_message
+            })
     context = {'task' : task}
     return render(request, 'taskmanagement_app/updatetask.html', context)
 @login_required
